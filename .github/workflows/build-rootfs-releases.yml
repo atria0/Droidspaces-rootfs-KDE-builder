@@ -16,6 +16,7 @@ on:
           - 'Fedora-43-KDE'
           - 'Fedora-44-KDE'
           - 'Arch-KDE'
+          - 'kali-rolling'
           - 'all'
           - 'all-wayland'
       custom_username:
@@ -162,6 +163,10 @@ jobs:
             Ubuntu-26-KDE)
               TEMPLATES=$(jq -n -c --arg t "$TARGET" '[$t]')
               WAYLAND_PACKAGE_TARGET="ubuntu2604"
+              ;;
+            kali-rolling)
+              TEMPLATES=$(jq -n -c --arg t "$TARGET" '[$t]')
+WAYLAND_PACKAGE_TARGET="Debian13"
               ;;
             Fedora-43-KDE)
               TEMPLATES=$(jq -n -c --arg t "$TARGET" '[$t]')
